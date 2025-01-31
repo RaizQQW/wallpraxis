@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de" data-whatinput="mouse" data-whatintent="mouse">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpraxis Winsen Luhe | Zahnärzte Bossen & Feuerberg</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="assets/leaflet/leaflet.css" rel="stylesheet">
+    <script src="assets/leaflet/leaflet.js"></script>
+    <script src="assets/cookieconsent/cookieconsent.js"></script>
+    <meta class="foundation-mq">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+                <img src="assets/img/logo.svg" alt="Wallpraxis Winsen">
+                <hr>
+            </div>
+            <div class="large-12 cell" style="margin-bottom: 30px;"></div>
+            <div class="large-6 cell">
+                <h2>Willkommen bei der Wallpraxis!</h2>
+                <p><strong>Liebe Patientin, lieber Patient,</strong></p>
+                <p>wir möchten Sie herzlich willkommen heißen in unserer Zahnarztpraxis in Winsen Luhe.</p>
+                <p>Als prophylaxeorientierte Familienpraxis mit hohem Qualitätsanspruch bieten wir Ihnen das gesamte
+                    Spektrum der modernen Zahnheilkunde an.<br>
+                    Ästhetische Zahnheilkunde, Prophylaxe für Kinder
+                    und Erwachsene, Parodontologie, Kinderzahnheilkunde, Implantologie, Zahnersatz... um nur einen Teil unserer
+                    Leistungen zu nennen.</p>
+                <p>Wir beraten Sie gerne und entwickeln mit Ihnen
+                    zusammen ein individuelles Behandlungskonzept.</p>
+                <p class="lead color-pri"><em><strong>Wir freuen uns auf Ihren Besuch!</strong></em></p>
+            </div>
+            <div class="large-6 cell">
+                <img src="assets/img/aerzte_full.jpg" alt="Unser Team">
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #efefef;margin-top:50px;">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="large-12 cell text-center">
+                    <h2 style="width:100%;margin-bottom:0;padding-top: 10px;">Sprechzeiten & Kontakt</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-pri" style="padding:100px 0;">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="large-5 cell text-center">
+                    <div style="font-size: 1.3rem; color:#fff;">Montag - Freitag: Termine nach Vereinbarung</div>
+                    <hr>
+                    <div class="text-center">
+                        <a href="tel:004941712200" style="font-size: 2.9rem; color:#fff;margin-top:-20px;" class="text-center medium-text-left">
+                            <i class="fas fa-phone"></i>&nbsp;&nbsp;04171 22 00</a>
+                    </div>
+                    <br>
+                    <a href="mailto:info@wallpraxis-winsen.de" style="font-size: 1.7rem; color:#fff;margin-top:-20px;" class="text-center medium-text-left">
+                        <i class="fas fa-envelope"></i>&nbsp;&nbsp;info@wallpraxis-winsen.de</a>
+                    <p><br></p>
+                    <!-- Career Section -->
+                    <div class="grid-x grid-padding-x">
+                        <div class="large-12 cell">
+                            <h3 style="color: white;">Karriere bei uns</h3>
+                        </div>
+                        <div class="medium-6 cell">
+                            <div class="button-group align-center">
+                                <a href="karriere/zfa/index.html" class="button large" style="background: var(--primary-color); margin: 0.5rem;">
+                                    <i class="fas fa-user-md"></i> ZFA werden
+                                </a>
+                                <a href="karriere/ausbildung/index.html" class="button large hollow" style="border-color: var(--primary-color); color: var(--primary-color); margin: 0.5rem;">
+                                    <i class="fas fa-graduation-cap"></i> Ausbildung
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <p><br></p>
+                    <p>
+                        <a href="http://www.xn--zahnrzte-lneburg-ynb25b.de/Notdienst/" target="_blank" class="button large expanded grey"><b>Notdienst <i class="fas fa-ambulance"></i></b></a>
+                    </p>
+                </div>
+                <div class="large-7 cell">
+                    <div id="map">
+                        <div id="placeholder_consent" style="width:100%; height:100%;">
+                            <div style="width:100%; height:75%;background: url('assets/img/map.png');">
+                            </div>
+                            <div class="callout">
+                                <p>Unsere Website verwendet Openstreetmap.org um Ihnen die Anfahrt zu erleichtern.
+                                    Der Einsatz ist jedoch freiwillig und bedarf Ihrer Zustimmung gemäß <a data-open="dsmodal">Datenschutzerklärung</a></p>
+                                <button class="button expanded secondary" onclick="test()">Zustimmen und externe Inhalte von Openstreetmap.org nachladen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #efefef;padding:50px;">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="large-6 cell text-center medium-text-left">
+                    © 2024 Alle Rechte vorbehalten.
+                </div>
+                <div class="large-6 cell text-center medium-text-left medium-text-right">
+                    <a href="karriere/zfa/index.html">ZFA werden</a> &nbsp;&nbsp;
+                    <a href="karriere/ausbildung/index.html">Ausbildung</a> &nbsp;&nbsp;
+                    <a data-open="impModal">Impressum</a> &nbsp;&nbsp;
+                    <a data-open="dsmodal">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impressum Modal -->
+    <div class="reveal small" id="impModal" data-reveal>
+        <div class="callout success">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x grid-padding-y">
+                    <div class="small-12 cell">
+                        <h2>Impressum</h2>
+                    </div>
+                    <div class="medium-6 cell">
+                        <strong>Wallpraxis Winsen</strong><br>
+                        Wallstraße 1<br>
+                        21423 Winsen Luhe<br>
+                        Deutschland <br><br>
+                        <i class="fas fa-phone"></i> 04171 22 00 <br>
+                        <i class="fas fa-print"></i> 04171 66 81 18<br>
+                        <i class="fas fa-envelope"></i> info@wallpraxis-winsen.de
+                    </div>
+                    <div class="medium-6 cell">
+                        <em>Inhaltlich verantwortlich</em><br>
+                        <p>
+                            <strong>Herr Frank Feuerberg</strong><br>
+                            Gesetzliche Berufsbezeichnung: Zahnarzt<br>
+                            Verliehen in: Bundesrepublik Deutschland
+                        </p>
+                        <p>
+                            <strong>Frau Monika Bossen</strong><br>
+                            Gesetzliche Berufsbezeichnung: Zahnärztin<br>
+                            Verliehen in: Bundesrepublik Deutschland
+                        </p>
+                    </div>
+                    <div class="medium-6 cell">
+                        <p>
+                            <strong>Zuständige Ärztekammer:</strong><br>
+                            Zahnärztekammer Niedersachsen Körperschaft des öffentlichen Rechts<br>
+                            Zeißstraße 11a<br>
+                            30519 Hannover<br>
+                        </p>
+                        <p>
+                            <strong>Berufsordnung ZKN:</strong> <a href="http://www.zkn.de/index.php?id=74" target="_new">Download</a>
+                        </p>
+                    </div>
+                    <div class="medium-6 cell">
+                        <p>
+                            <strong>Mitglied der KZVN:</strong><br>
+                            Kassenzahnärztliche Vereinigung Niedersachsen Körperschaft des öffentlichen
+                            Rechts<br>
+                            Zeißstraße 11<br>
+                            30519 Hannover
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div class="reveal small" id="dsmodal" data-reveal>
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x grid-padding-y">
+                <div class="small-12 cell">
+                    <h2>Geltungsbereich</h2>
+                    <p>Diese Datenschutzerklärung soll die Nutzer dieser Website gemäß Bundesdatenschutzgesetz und
+                        Telemediengesetz über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten
+                        durch den Websitebetreiber</p>
+                    <p>Wallpraxis Winsen<br>Wallstraße 1<br>21423 Winsen Luhe<br>Deutschland</p>
+                    <p>informieren.</p>
+                    <p>Der Websitebetreiber nimmt Ihren Datenschutz sehr ernst und behandelt Ihre personenbezogenen
+                        Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Bedenken Sie, dass die
+                        Datenübertragung im Internet grundsätzlich mit Sicherheitslücken bedacht sein kann. Ein vollumfänglicher Schutz vor
+                        dem Zugriff durch Fremde ist nicht realisierbar.</p>
+                    <h2>Zugriffsdaten</h2>
+                    <p>Der Hostinganbieter protokolliert nachfolgende Daten zur Wahrung der Integrität und Sicherheit
+                        der Website und speichert diese als "Server-Logfiles" ab.</p>
+                    <ul>
+                        <li>Besuchte Website</li>
+                        <li>Uhrzeit zum Zeitpunkt des Zugriffes</li>
+                        <li>Menge der gesendeten Daten in Byte</li>
+                        <li>Quelle/Verweis, von welchem Sie auf die Seite gelangten</li>
+                        <li>Verwendeter Browser</li>
+                        <li>Verwendetes Betriebssystem</li>
+                        <li>Verwendete IP-Adresse</li>
+                    </ul>
+                    <p><b>Die IP-Adresse wird durch den Hostinganbieter in den Logdateien anonymisiert.</b></p>
+                    <h2>Cookies</h2>
+                    <p>Diese Website verwendet keine Cookies.</p>
+                </div>
+            </div>
+        </div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        function test() {
+            let my_awesome_script = document.createElement('script');
+            my_awesome_script.setAttribute('src','assets/leaflet/map_directions.js');
+            document.head.appendChild(my_awesome_script);
+        }
+    </script>
+</body>
+</html> 
