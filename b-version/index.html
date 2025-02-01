@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpraxis Winsen | Moderne Zahnmedizin mit Herz</title>
+    <meta name="description" content="Ihre moderne Zahnarztpraxis in Winsen. Schmerzfreie Behandlung, modernste Technologie und ein Team, das sich um Ihr Wohlbefinden kümmert.">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Wallpraxis Winsen",
+        "image": "https://wallpraxis-winsen.de/assets/img/logo.svg",
+        "url": "https://wallpraxis-winsen.de",
+        "telephone": "+4941712200",
+        "email": "info@wallpraxis-winsen.de",
+        "description": "Ihre moderne Zahnarztpraxis in Winsen. Schmerzfreie Behandlung, modernste Technologie und ein Team, das sich um Ihr Wohlbefinden kümmert.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Wallstraße 1",
+            "addressLocality": "Winsen",
+            "postalCode": "21423",n
+            "addressCountry": "DE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "53.3577",
+            "longitude": "10.2107"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "description": "Termine nach Vereinbarung"
+        },
+        "sameAs": [
+            "https://www.facebook.com/wallpraxiswinsen",
+            "https://www.instagram.com/wallpraxiswinsen"
+        ],
+        "priceRange": "€€",
+        "medicalSpecialty": [
+            "Implantologie",
+            "Prophylaxe",
+            "Ästhetische Zahnheilkunde",
+            "Parodontologie",
+            "Kinderzahnheilkunde"
+        ],
+        "employee": [
+            {
+                "@type": "Person",
+                "name": "Frank Feuerberg",
+                "jobTitle": "Zahnarzt"
+            },
+            {
+                "@type": "Person",
+                "name": "Monika Bossen",
+                "jobTitle": "Zahnärztin"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Essential Variables */
+        :root {
+            --primary: #00838f;
+            --primary-light: #4fb3bf;
+            --primary-dark: #005662;
+            --text: #2c3e50;
+            --text-light: #ffffff;
+            --background: #ffffff;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --font-size-base: 1.125rem;
+            --font-size-lg: 1.25rem;
+            --font-size-xl: 1.5rem;
+            --font-size-2xl: 1.75rem;
+            --font-size-3xl: 2.25rem;
+            --line-height-normal: 1.5;
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --transition-fast: 150ms ease;
+        }
+
+        /* Critical Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-normal);
+            color: var(--text);
+            background: var(--background);
+        }
+
+        /* Critical Layout */
+        .container {
+            width: min(100% - 2rem, 1200px);
+            margin-inline: auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* Critical Navigation */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md) 0;
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            list-style: none;
+        }
+
+        .nav__link {
+            color: var(--text);
+            text-decoration: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+        }
+
+        .nav__cta {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        /* Critical Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(0, 86, 98, 0.85), rgba(0, 131, 143, 0.75)), url('assets/img/aerzte_full.jpg');
+            background-position: 60% 30%;
+            background-size: cover;
+        }
+
+        .hero__content {
+            color: var(--text-light);
+            max-width: 600px;
+        }
+
+        .hero__title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero__subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Critical Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                background: none;
+                border: none;
+                padding: var(--spacing-sm);
+                cursor: pointer;
+            }
+
+            .nav__menu {
+                display: none;
+            }
+
+            .nav__menu.active {
+                display: flex;
+                position: fixed;
+                inset: 0;
+                background: rgba(255, 255, 255, 0.98);
+                padding: 80px var(--spacing-lg);
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <!-- Deferred CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/491783569106" target="_blank" rel="noopener" class="whatsapp-button" aria-label="Kontaktieren Sie uns via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.967 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Header with Glassmorphism -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="nav__logo">
+                    <img src="assets/img/logo.svg" alt="Wallpraxis Winsen" width="200" height="50">
+                </a>
+                
+                <ul class="nav__menu">
+                    <li><a href="#leistungen" class="nav__link">Leistungen</a></li>
+                    <li><a href="#team" class="nav__link">Team</a></li>
+                    <li><a href="#praxis" class="nav__link">Praxis</a></li>
+                    <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+                    <li><a href="#karriere" class="nav__link">Karriere</a></li>
+                    <li><a href="tel:+4941712200" class="nav__cta">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        04171 2200
+                    </a></li>
+                </ul>
+
+                <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Moderne Zahnmedizin mit Herz in Winsen</h1>
+                <p class="hero__subtitle">Ihr Wohlbefinden ist unsere Priorität. Erleben Sie schmerzfreie Behandlungen mit modernster Technologie in entspannter Atmosphäre.</p>
+                <div class="hero__cta-group">
+                    <a href="#termin" class="hero__cta hero__cta--primary">
+                        Termin vereinbaren
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#karriere" class="hero__cta hero__cta--secondary">
+                        Karriere bei uns
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 7h-4a4 4 0 0 0-8 0H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                            <circle cx="12" cy="11" r="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Visit Section -->
+    <section class="first-visit" id="neue-patienten">
+        <div class="container">
+            <h2 class="text-center">Ihr erster Besuch bei uns</h2>
+            <p class="text-center mb-lg">Wir machen es Ihnen so einfach wie möglich</p>
+            
+            <div class="first-visit__grid">
+                <div class="first-visit__step">
+                    <div class="first-visit__step-number">1</div>
+                    <h3>Termin vereinbaren</h3>
+                    <p>Rufen Sie uns an oder nutzen Sie unser Online-Formular für eine Terminvereinbarung.</p>
+                    <div class="first-visit__actions">
+                        <a href="tel:+4941712200" class="first-visit__action">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            04171 2200
+                        </a>
+                        <a href="#kontakt" class="first-visit__action">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            Online Termin
+                        </a>
+                    </div>
+                </div>
+
+                <div class="first-visit__step">
+                    <div class="first-visit__step-number">2</div>
+                    <h3>Vorbereitung</h3>
+                    <p>Laden Sie unseren Anamnesebogen herunter und füllen Sie ihn in Ruhe aus.</p>
+                    <a href="/downloads/anamnesebogen.pdf" class="first-visit__download" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Anamnesebogen herunterladen
+                    </a>
+                </div>
+
+                <div class="first-visit__step">
+                    <div class="first-visit__step-number">3</div>
+                    <h3>Anfahrt</h3>
+                    <p>Kostenlose Parkplätze finden Sie direkt vor der Praxis. Auch mit öffentlichen Verkehrsmitteln sind wir gut erreichbar.</p>
+                    <a href="https://goo.gl/maps/your-location" class="first-visit__map" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Route planen
+                    </a>
+                </div>
+
+                <div class="first-visit__step">
+                    <div class="first-visit__step-number">4</div>
+                    <h3>Ihr Besuch</h3>
+                    <p>Bitte kommen Sie 10 Minuten vor Ihrem Termin. Bringen Sie mit:</p>
+                    <ul class="first-visit__checklist">
+                        <li>Ausgefüllter Anamnesebogen</li>
+                        <li>Versichertenkarte</li>
+                        <li>Medikamentenplan (falls vorhanden)</li>
+                        <li>Röntgenbilder (falls vorhanden)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="text-center">Warum Wallpraxis?</h2>
+            <p class="text-center mb-lg">Moderne Zahnmedizin mit Herz - das macht uns aus</p>
+            
+            <div class="features__grid">
+                <article class="feature-card fade-in">
+                    <div class="feature-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Modernste Technologie</h3>
+                    <p>Digitales Röntgen, moderne Behandlungseinheiten und digitale Patientenakten für optimale Behandlungsergebnisse.</p>
+                </article>
+
+                <article class="feature-card fade-in">
+                    <div class="feature-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.93 4.93l4.24 4.24"/>
+                            <path d="M14.83 14.83l4.24 4.24"/>
+                            <path d="M14.83 9.17l4.24-4.24"/>
+                            <path d="M4.93 19.07l4.24-4.24"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Schmerzfreie Behandlung</h3>
+                    <p>Mit sanften Methoden und modernster Anästhesie sorgen wir für eine angenehme, schmerzfreie Behandlung.</p>
+                </article>
+
+                <article class="feature-card fade-in">
+                    <div class="feature-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Höchste Qualität</h3>
+                    <p>Als qualitätsorientierte Praxis setzen wir auf beste Materialien und kontinuierliche Fortbildung.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="leistungen">
+        <div class="container">
+            <h2 class="text-center">Unsere Leistungen</h2>
+            <p class="text-center mb-lg">Das komplette Spektrum moderner Zahnmedizin</p>
+            
+            <div class="services__grid">
+                <article class="service-card fade-in">
+                    <h3 class="service-card__title">Prophylaxe</h3>
+                    <p class="service-card__description">Professionelle Zahnreinigung und individuelle Vorsorge für Kinder und Erwachsene.</p>
+                    <a href="#prophylaxe" class="service-card__link">
+                        Mehr erfahren
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <article class="service-card fade-in">
+                    <h3 class="service-card__title">Implantologie</h3>
+                    <p class="service-card__description">Hochwertige Zahnimplantate für festen Zahnersatz und mehr Lebensqualität.</p>
+                    <a href="#implantologie" class="service-card__link">
+                        Mehr erfahren
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <article class="service-card fade-in">
+                    <h3 class="service-card__title">Ästhetische Zahnheilkunde</h3>
+                    <p class="service-card__description">Für ein strahlendes Lächeln - von Bleaching bis zu hochwertigen Veneers.</p>
+                    <a href="#aesthetik" class="service-card__link">
+                        Mehr erfahren
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="text-center">Unser Team</h2>
+            <p class="text-center mb-lg">Kompetenz und Herzlichkeit für Ihre Zahngesundheit</p>
+            
+            <div class="team__grid">
+                <article class="team-card fade-in">
+                    <img src="assets/img/team-1.jpg" alt="Frank Feuerberg" class="team-card__image">
+                    <div class="team-card__content">
+                        <h3 class="team-card__title">Frank Feuerberg</h3>
+                        <p class="team-card__role">Zahnarzt</p>
+                    </div>
+                </article>
+
+                <article class="team-card fade-in">
+                    <img src="assets/img/team-2.jpg" alt="Monika Bossen" class="team-card__image">
+                    <div class="team-card__content">
+                        <h3 class="team-card__title">Monika Bossen</h3>
+                        <p class="team-card__role">Zahnärztin</p>
+                    </div>
+                </article>
+
+                <article class="team-card fade-in">
+                    <img src="assets/img/team-3.jpg" alt="Praxisteam" class="team-card__image">
+                    <div class="team-card__content">
+                        <h3 class="team-card__title">Unser Praxisteam</h3>
+                        <p class="team-card__role">Kompetente Unterstützung</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section--gradient" id="kontakt">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">Kontakt & Sprechzeiten</h2>
+                <p class="section__subtitle">Termine nach Vereinbarung</p>
+            </header>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card__title">Öffnungszeiten & Kontakt</h3>
+                    <p class="card__subtitle">Montag - Freitag: Termine nach Vereinbarung</p>
+                    
+                    <ul class="content-list">
+                        <li class="content-list__item">
+                            <svg class="content-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+4941712200" class="content-list__link">04171 2200</a>
+                        </li>
+                        <li class="content-list__item">
+                            <svg class="content-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:info@wallpraxis-winsen.de" class="content-list__link">info@wallpraxis-winsen.de</a>
+                        </li>
+                        <li class="content-list__item">
+                            <svg class="content-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span class="content-list__text">Wallstraße 1<br>21423 Winsen Luhe</span>
+                        </li>
+                        <li class="content-list__item">
+                            <svg class="content-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M15.58,12V5h3L12,0,5.42,5h3V12H2l5,5,5-5Z"/>
+                            </svg>
+                            <a href="http://www.zahnärzte-lüneburg.de/Notdienst/" target="_blank" rel="noopener" class="content-list__link">Zahnärztlicher Notdienst</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Section -->
+    <section class="career" id="karriere">
+        <div class="container">
+            <h2 class="text-center">Karriere bei uns</h2>
+            <p class="text-center mb-lg">Werden Sie Teil unseres modernen Teams in Winsen</p>
+
+            <div class="career__grid">
+                <!-- ZFA Section -->
+                <div class="career-section fade-in" id="zfa">
+                    <div class="career-section__content">
+                        <h3>ZFA (m/w/d) in Vollzeit</h3>
+                        <p class="career-section__subtitle">Übertariflich & Modern</p>
+                        
+                        <div class="career-section__details">
+                            <div class="career-section__column">
+                                <h4>Ihre Aufgaben</h4>
+                                <ul class="career-section__list">
+                                    <li>Stuhlassistenz</li>
+                                    <li>Prophylaxe</li>
+                                    <li>Patientenbetreuung</li>
+                                    <li>Praxisorganisation</li>
+                                    <li>Qualitätsmanagement</li>
+                                </ul>
+                            </div>
+                            <div class="career-section__column">
+                                <h4>Wir bieten</h4>
+                                <ul class="career-section__list">
+                                    <li>Moderner Arbeitsplatz</li>
+                                    <li>Fortbildungsmöglichkeiten</li>
+                                    <li>Leistungsgerechte Vergütung</li>
+                                    <li>Angenehmes Arbeitsklima</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="#bewerbung" class="career-section__cta">
+                            Jetzt bewerben
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 7h-4a4 4 0 0 0-8 0H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                                <circle cx="12" cy="11" r="3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ausbildung Section -->
+                <div class="career-section fade-in" id="ausbildung">
+                    <div class="career-section__content">
+                        <h3>Ausbildung zur/zum ZFA</h3>
+                        <p class="career-section__subtitle">Starten Sie Ihre Karriere bei uns</p>
+
+                        <div class="career-section__details">
+                            <div class="career-section__column">
+                                <h4>Ihre Ausbildung</h4>
+                                <ul class="career-section__list">
+                                    <li>Praktische Ausbildung in der Praxis</li>
+                                    <li>Berufsschulunterricht</li>
+                                    <li>Persönliche Betreuung</li>
+                                    <li>Moderne Ausbildungsmethoden</li>
+                                </ul>
+                            </div>
+                            <div class="career-section__column">
+                                <h4>Wir bieten</h4>
+                                <ul class="career-section__list">
+                                    <li>Familiäre Atmosphäre</li>
+                                    <li>Moderne Ausstattung</li>
+                                    <li>Team-Events</li>
+                                    <li>Übernahmemöglichkeit</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="#bewerbung" class="career-section__cta">
+                            Jetzt bewerben
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 7h-4a4 4 0 0 0-8 0H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                                <circle cx="12" cy="11" r="3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiative Applications -->
+    <section class="initiative" id="initiative">
+        <div class="container">
+            <div class="career-section fade-in">
+                <div class="career-section__content">
+                    <h3>Initiativbewerbung</h3>
+                    <p class="career-section__subtitle">Sie finden keine passende Stelle?</p>
+                    
+                    <div class="career-section__details">
+                        <div class="career-section__column">
+                            <h4>Wir bieten</h4>
+                            <ul class="career-section__list">
+                                <li>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    Flexible Einsatzmöglichkeiten
+                                </li>
+                                <li>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    Individuelle Entwicklungsmöglichkeiten
+                                </li>
+                                <li>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    Offenheit für neue Ideen
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="career-section__column">
+                            <h4>Ihre Chance</h4>
+                            <p>Sie möchten Teil unseres Teams werden? Wir freuen uns über Ihre Initiativbewerbung!</p>
+                        </div>
+                    </div>
+
+                    <a href="#bewerbung" class="career-section__cta">
+                        Jetzt initiativ bewerben
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 7h-4a4 4 0 0 0-8 0H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                            <circle cx="12" cy="11" r="3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section class="application" id="bewerbung">
+        <div class="container">
+            <div class="application__grid">
+                <div class="application__info">
+                    <h2>Ihre Bewerbung</h2>
+                    <p class="application__subtitle">Wir freuen uns darauf, Sie kennenzulernen!</p>
+                    
+                    <div class="application__methods">
+                        <div class="application__method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <h3>Per E-Mail</h3>
+                            <p>Senden Sie Ihre Bewerbung an:</p>
+                            <a href="mailto:bewerbung@wallpraxis-winsen.de" class="application__link">bewerbung@wallpraxis-winsen.de</a>
+                        </div>
+
+                        <div class="application__method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            <h3>WhatsApp</h3>
+                            <p>Schnell & unkompliziert:</p>
+                            <a href="https://wa.me/491783569106" target="_blank" rel="noopener" class="application__link">WhatsApp Chat starten</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="application__form" action="https://formsubmit.co/bewerbung@wallpraxis-winsen.de" method="POST">
+                    <h3>Online bewerben</h3>
+                    <input type="hidden" name="_subject" value="Neue Bewerbung über die Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://wallpraxis-winsen.de/danke.html">
+                    
+                    <div class="application__form-group">
+                        <label for="position" class="application__form-label">Gewünschte Position</label>
+                        <select id="position" name="position" class="application__form-input" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="ZFA">ZFA (m/w/d)</option>
+                            <option value="Ausbildung">Ausbildung zur/zum ZFA</option>
+                            <option value="Initiative">Initiativbewerbung</option>
+                        </select>
+                    </div>
+
+                    <div class="application__form-group">
+                        <label for="application-name" class="application__form-label">Name</label>
+                        <input type="text" id="application-name" name="name" class="application__form-input" required>
+                    </div>
+
+                    <div class="application__form-group">
+                        <label for="application-email" class="application__form-label">E-Mail</label>
+                        <input type="email" id="application-email" name="email" class="application__form-input" required>
+                    </div>
+
+                    <div class="application__form-group">
+                        <label for="application-phone" class="application__form-label">Telefon</label>
+                        <input type="tel" id="application-phone" name="phone" class="application__form-input">
+                    </div>
+
+                    <div class="application__form-group">
+                        <label for="application-message" class="application__form-label">Ihre Nachricht</label>
+                        <textarea id="application-message" name="message" class="application__form-input" rows="4" required></textarea>
+                    </div>
+
+                    <div class="application__form-group">
+                        <label for="cv" class="application__form-label">Lebenslauf (PDF, max. 10MB)</label>
+                        <input type="file" id="cv" name="cv" class="application__form-input application__form-input--file" accept=".pdf">
+                    </div>
+
+                    <button type="submit" class="application__form-button">
+                        Bewerbung absenden
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__info">
+                    <a href="/" class="footer__logo">
+                        <img src="assets/img/logo-white.svg" alt="Wallpraxis Winsen" width="150" height="40">
+                    </a>
+                    <p class="footer__description">Ihre moderne Zahnarztpraxis in Winsen. Kompetenz und Herzlichkeit für Ihre Zahngesundheit.</p>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Navigation</h4>
+                    <a href="#leistungen" class="footer__link">Leistungen</a>
+                    <a href="#team" class="footer__link">Team</a>
+                    <a href="#kontakt" class="footer__link">Kontakt</a>
+                    <a href="#karriere" class="footer__link">Karriere</a>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Rechtliches</h4>
+                    <a href="impressum.html" class="footer__link">Impressum</a>
+                    <a href="datenschutz.html" class="footer__link">Datenschutz</a>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Notfall & Karriere</h4>
+                    <a href="http://www.zahnärzte-lüneburg.de/Notdienst/" target="_blank" class="footer__link">
+                        Notdienst
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <a href="#zfa" class="footer__link">ZFA werden</a>
+                    <a href="#ausbildung" class="footer__link">Ausbildung</a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2024 Wallpraxis Winsen. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Additional JavaScript -->
+    <script>
+        // Mobile menu handling
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav__menu');
+        const body = document.body;
+
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+                body.style.overflow = isExpanded ? '' : 'hidden';
+            });
+
+            // Close menu when clicking on a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('active');
+                    body.style.overflow = '';
+                });
+            });
+        }
+
+        // Intersection Observer for fade-in animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+
+        // Form submission handling
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                const button = form.querySelector('button[type="submit"]');
+                if (button) {
+                    button.classList.add('loading');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
