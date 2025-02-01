@@ -56,11 +56,17 @@
             color: var(--primary-color);
             font-weight: 500;
             transition: all 0.3s ease;
+            text-decoration: none;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 0.5rem;
         }
 
         .back-to-home:hover {
-            color: var(--secondary-color);
+            color: var(--primary-color);
             transform: translateX(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .hero {
@@ -147,14 +153,25 @@
             color: var(--text-light);
             border-radius: 8px;
             overflow: hidden;
+            height: 100%;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-card .card-section {
+            width: 100%;
+            padding: 1.5rem;
+            text-align: center;
         }
 
         .stat-card .stat-number {
             font-size: 2.5rem;
             font-weight: 600;
             color: var(--accent-light);
-            margin: 0.5rem 0;
-            line-height: 1;
+            margin: 1rem 0;
+            line-height: 1.2;
         }
 
         .stat-card .stat-label {
@@ -163,32 +180,106 @@
             font-size: 1.1rem;
             line-height: 1.4;
             margin-bottom: 0;
+            padding: 0 0.5rem;
         }
 
         .stat-card .stat-icon {
             color: var(--primary-light);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
         }
 
         @media screen and (max-width: 640px) {
             .button-group {
                 display: flex;
                 flex-direction: column;
-                gap: 1rem;
+                align-items: center;
                 width: 100%;
             }
             
             .button-group .button {
-                margin: 0 !important;
-                width: 100%;
+                margin: 0.5rem !important;
+                width: calc(100% - 1rem) !important;
             }
 
             .stat-card {
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
 
-            .grid-x > .cell {
-                margin-bottom: 1rem;
+            .small-6.cell {
+                margin-bottom: 1.5rem;
+            }
+
+            .stat-card .stat-label {
+                font-size: 1rem;
+            }
+        }
+
+        /* Modal styles */
+        .reveal {
+            border: none;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 0;
+            max-width: 800px;
+            width: 90%;
+            background: white;
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            z-index: 1006;
+            display: none;
+        }
+
+        .reveal.open {
+            display: block;
+        }
+
+        .reveal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1005;
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 2rem 0;
+        }
+
+        .reveal-overlay.open {
+            display: block;
+        }
+
+        .reveal .close-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 2em;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--text-dark);
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .reveal .close-button:hover {
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 640px) {
+            .reveal {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .reveal-overlay {
+                padding: 0;
             }
         }
     </style>
@@ -200,7 +291,7 @@
             <div class="grid-x grid-padding-x align-middle" style="height: 60px;">
                 <div class="cell small-6 medium-3">
                     <a href="../../index.html" class="back-to-home">
-                        <i class="fas fa-chevron-left"></i>&nbsp; Zurück zur Startseite
+                        <i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Startseite
                     </a>
                 </div>
                 <div class="cell small-6 medium-6 text-center show-for-medium">
@@ -234,10 +325,10 @@
                     <h1 style="color: white; font-size: 3rem;">Deine Zukunft beginnt hier!</h1>
                     <p class="lead" style="color: white;">Ausbildung zur/zum Zahnmedizinischen Fachangestellten (ZFA)</p>
                     <div class="button-group align-center" style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        <a data-open="applicationModal" class="button large" style="background: var(--primary-color); margin: 0 0.5rem; max-width: 250px;">
+                        <a data-open="applicationModal" class="button large" style="background: var(--primary-color); margin: 0.5rem; max-width: 250px; width: 100%;">
                             <i class="fas fa-paper-plane"></i> Online bewerben
                         </a>
-                        <a href="https://wa.me/491783569106" class="button large" style="background: #25D366; margin: 0 0.5rem; max-width: 250px;" target="_blank">
+                        <a href="https://wa.me/491783569106" class="button large" style="background: #25D366; margin: 0.5rem; max-width: 250px; width: 100%;" target="_blank">
                             <i class="fab fa-whatsapp"></i> WhatsApp Chat
                         </a>
                     </div>
@@ -250,8 +341,8 @@
     <div class="grid-container" style="margin-top: -3rem; position: relative; z-index: 2;">
         <div class="grid-x grid-padding-x text-center">
             <div class="medium-3 small-6 cell">
-                <div class="stat-card" style="height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    <div class="card-section text-center">
+                <div class="stat-card">
+                    <div class="card-section">
                         <i class="fas fa-clock fa-3x stat-icon"></i>
                         <div class="stat-number">3 Jahre</div>
                         <p class="stat-label">Ausbildungsdauer</p>
@@ -259,8 +350,8 @@
                 </div>
             </div>
             <div class="medium-3 small-6 cell">
-                <div class="stat-card" style="height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    <div class="card-section text-center">
+                <div class="stat-card">
+                    <div class="card-section">
                         <i class="fas fa-euro-sign fa-3x stat-icon"></i>
                         <div class="stat-number">1.000€+</div>
                         <p class="stat-label">Ausbildungsvergütung</p>
@@ -268,8 +359,8 @@
                 </div>
             </div>
             <div class="medium-3 small-6 cell">
-                <div class="stat-card" style="height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    <div class="card-section text-center">
+                <div class="stat-card">
+                    <div class="card-section">
                         <i class="fas fa-graduation-cap fa-3x stat-icon"></i>
                         <div class="stat-number">100%</div>
                         <p class="stat-label">Übernahmechance</p>
@@ -277,8 +368,8 @@
                 </div>
             </div>
             <div class="medium-3 small-6 cell">
-                <div class="stat-card" style="height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    <div class="card-section text-center">
+                <div class="stat-card">
+                    <div class="card-section">
                         <i class="fas fa-calendar-alt fa-3x stat-icon"></i>
                         <div class="stat-number">30</div>
                         <p class="stat-label">Urlaubstage<br>+ Brückentage</p>
@@ -349,9 +440,9 @@
         </div>
         <div class="grid-x grid-padding-x align-center">
             <div class="medium-4 small-12 cell" style="margin-bottom: 1rem;">
-                <div class="stat-card" style="height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    <div class="card-section text-center">
-                        <i class="fas fa-euro-sign fa-3x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <div class="stat-card">
+                    <div class="card-section">
+                        <i class="fas fa-euro-sign fa-3x stat-icon"></i>
                         <h4>Faire Vergütung</h4>
                         <ul class="no-bullet">
                             <li>1. Jahr: 1.000€+</li>
@@ -363,9 +454,9 @@
                 </div>
             </div>
             <div class="medium-4 small-12 cell" style="margin-bottom: 1rem;">
-                <div class="stat-card" style="height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    <div class="card-section text-center">
-                        <i class="fas fa-graduation-cap fa-3x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <div class="stat-card">
+                    <div class="card-section">
+                        <i class="fas fa-graduation-cap fa-3x stat-icon"></i>
                         <h4>Beste Ausbildung</h4>
                         <ul class="no-bullet">
                             <li>Persönlicher Mentor</li>
@@ -377,9 +468,9 @@
                 </div>
             </div>
             <div class="medium-4 small-12 cell" style="margin-bottom: 1rem;">
-                <div class="stat-card" style="height: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;">
-                    <div class="card-section text-center">
-                        <i class="fas fa-heart fa-3x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <div class="stat-card">
+                    <div class="card-section">
+                        <i class="fas fa-heart fa-3x stat-icon"></i>
                         <h4>Extras & Benefits</h4>
                         <ul class="no-bullet">
                             <li>30 Tage Urlaub</li>
@@ -402,10 +493,10 @@
                         <h2>Starte deine Zukunft!</h2>
                         <p class="lead">Bewirb dich in nur 2 Minuten</p>
                         <div class="button-group align-center" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-                            <a class="button large" style="background: var(--primary-color); margin: 0 0.5rem; max-width: 250px;" data-open="applicationModal">
+                            <a class="button large" style="background: var(--primary-color); margin: 0.5rem; max-width: 250px; width: 100%;" data-open="applicationModal">
                                 <i class="fas fa-paper-plane"></i> Online bewerben
                             </a>
-                            <a class="button large" style="background: #25D366; margin: 0 0.5rem; max-width: 250px;" href="https://wa.me/491783569106" target="_blank">
+                            <a class="button large" style="background: #25D366; margin: 0.5rem; max-width: 250px; width: 100%;" href="https://wa.me/491783569106" target="_blank">
                                 <i class="fab fa-whatsapp"></i> WhatsApp Chat
                             </a>
                         </div>
@@ -419,47 +510,61 @@
     <!-- Application Modal -->
     <div class="reveal large" id="applicationModal" data-reveal>
         <h2>Schnellbewerbung</h2>
-        <form id="quickApplyForm">
+        <form action="https://formsubmit.co/social@wallpraxis-winsen.de" method="POST">
+            <!-- FormSubmit.co Configuration -->
+            <input type="hidden" name="_subject" value="Neue Ausbildungsbewerbung über Online-Formular">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="https://raizqqw.github.io/wallpraxis/karriere/ausbildung/danke.html">
+            
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="medium-6 cell">
                         <label>Name
-                            <input type="text" required>
+                            <input type="text" name="name" required>
                         </label>
                     </div>
                     <div class="medium-6 cell">
                         <label>E-Mail
-                            <input type="email" required>
+                            <input type="email" name="email" required>
                         </label>
                     </div>
                     <div class="medium-6 cell">
                         <label>Telefon/WhatsApp
-                            <input type="tel">
+                            <input type="tel" name="phone">
                         </label>
                     </div>
                     <div class="medium-6 cell">
                         <label>Schulabschluss
-                            <select required>
-                                <option>Hauptschulabschluss</option>
-                                <option>Realschulabschluss</option>
-                                <option>Abitur</option>
-                                <option>Sonstiger</option>
+                            <select name="education" required>
+                                <option value="">Bitte wählen...</option>
+                                <option value="Hauptschulabschluss">Hauptschulabschluss</option>
+                                <option value="Realschulabschluss">Realschulabschluss</option>
+                                <option value="Abitur">Abitur</option>
+                                <option value="Sonstiger">Sonstiger</option>
                             </select>
                         </label>
                     </div>
                     <div class="medium-12 cell">
                         <label>Nachricht (optional)
-                            <textarea rows="3"></textarea>
+                            <textarea name="message" rows="3"></textarea>
                         </label>
                     </div>
                     <div class="medium-12 cell">
                         <div class="callout primary">
-                            <input type="checkbox" required> 
-                            <label>Ich stimme der Verarbeitung meiner Daten gemäß <a data-open="dsmodal">Datenschutzerklärung</a> zu.</label>
+                            <div class="checkbox-wrapper" style="display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" id="privacy-checkbox" name="datenschutz" required style="margin-top: 0.25rem;"> 
+                                <label for="privacy-checkbox" style="cursor: pointer; margin: 0;">Ich stimme der Verarbeitung meiner Daten gemäß <a data-open="dsmodal">Datenschutzerklärung</a> zu.</label>
+                            </div>
                         </div>
                     </div>
                     <div class="medium-12 cell text-center">
-                        <button type="submit" class="button success large">Jetzt bewerben</button>
+                        <button type="submit" class="button success large">
+                            <span class="label">Jetzt bewerben</span>
+                            <span class="loading-indicator" hidden>
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -469,35 +574,133 @@
         </button>
     </div>
 
-    <!-- Pixel Tracking -->
+    <!-- Load JavaScript at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"></script>
+    
     <script>
-        // Meta Pixel
-        fbq('track', 'ViewContent', {
-            content_name: 'Ausbildung Landing Page',
-            content_category: 'Career'
-        });
+        // Debug: Check if jQuery is loaded
+        if (typeof jQuery != 'undefined') {
+            console.log('jQuery is loaded');
+        } else {
+            console.log('jQuery is not loaded');
+        }
 
-        // Track form submissions
-        document.getElementById('quickApplyForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            fbq('track', 'Lead', {
-                content_name: 'Ausbildung Application',
-                content_category: 'Career'
+        // Debug: Check if Foundation is loaded
+        if (typeof Foundation != 'undefined') {
+            console.log('Foundation is loaded');
+        } else {
+            console.log('Foundation is not loaded');
+        }
+
+        $(document).ready(function() {
+            // Initialize Foundation
+            $(document).foundation();
+            console.log('Foundation initialized');
+            
+            // Debug: Check if modal exists
+            if ($('#applicationModal').length) {
+                console.log('Modal element found');
+            } else {
+                console.log('Modal element not found');
+            }
+            
+            // Debug: Check if trigger buttons exist
+            if ($('[data-open="applicationModal"]').length) {
+                console.log('Modal trigger buttons found:', $('[data-open="applicationModal"]').length);
+            } else {
+                console.log('No modal trigger buttons found');
+            }
+
+            // Handle modal events
+            $('#applicationModal').on('open.zf.reveal', function() {
+                console.log('Modal opened');
+            }).on('closed.zf.reveal', function() {
+                console.log('Modal closed');
+            }).on('closeme.zf.reveal', function() {
+                console.log('Modal close triggered');
             });
-            ttq.track('SubmitForm');
-            alert('Danke für deine Bewerbung! Wir melden uns schnellstmöglich bei dir.');
-            $('#applicationModal').foundation('close');
-        });
 
-        // Track WhatsApp clicks
-        document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
-            link.addEventListener('click', function() {
-                fbq('track', 'Contact', {
-                    content_name: 'WhatsApp Click',
-                    content_category: 'Career'
+            // Handle button clicks explicitly
+            $('[data-open="applicationModal"]').on('click', function(e) {
+                console.log('Button clicked');
+                e.preventDefault();
+                $('#applicationModal').foundation('open');
+            });
+
+            // Form handling
+            const form = document.getElementById('applicationForm');
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const loadingLabel = submitButton.querySelector('.label');
+                    const loadingIndicator = submitButton.querySelector('.loading-indicator');
+                    submitButton.disabled = true;
+                    loadingLabel.hidden = true;
+                    loadingIndicator.hidden = false;
+
+                    try {
+                        // Gather form data
+                        const formData = new FormData(form);
+                        
+                        // Send form data to our PHP endpoint
+                        const response = await fetch('/api/send-application.php', {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                name: formData.get('name'),
+                                email: formData.get('email'),
+                                phone: formData.get('phone'),
+                                education: formData.get('education'),
+                                message: formData.get('message'),
+                                subject: 'Neue Ausbildungsbewerbung über Online-Formular'
+                            }),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+
+                        const result = await response.json();
+                        
+                        if (!result.success) {
+                            throw new Error(result.message);
+                        }
+                        
+                        // Show success message
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'callout success';
+                        successMessage.setAttribute('role', 'alert');
+                        successMessage.innerHTML = '<p>Vielen Dank für deine Bewerbung! Wir melden uns schnellstmöglich bei dir.</p>';
+                        form.replaceWith(successMessage);
+                        
+                    } catch (error) {
+                        // Error message
+                        const errorMessage = document.createElement('div');
+                        errorMessage.className = 'callout alert';
+                        errorMessage.setAttribute('role', 'alert');
+                        errorMessage.innerHTML = `<p>Es ist ein Fehler aufgetreten: ${error.message}. Bitte versuche es später erneut.</p>`;
+                        form.insertBefore(errorMessage, form.firstChild);
+                        
+                        submitButton.disabled = false;
+                        loadingLabel.hidden = false;
+                        loadingIndicator.hidden = true;
+                    }
                 });
-                ttq.track('Contact');
-            });
+
+                // Make checkbox label clickable
+                const checkboxWrapper = form.querySelector('.checkbox-wrapper');
+                if (checkboxWrapper) {
+                    checkboxWrapper.addEventListener('click', function(e) {
+                        // Prevent click if clicking on the actual checkbox or link
+                        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'A') {
+                            const checkbox = this.querySelector('input[type="checkbox"]');
+                            checkbox.checked = !checkbox.checked;
+                        }
+                    });
+                }
+            }
         });
     </script>
 
